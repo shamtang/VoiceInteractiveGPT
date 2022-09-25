@@ -34,4 +34,11 @@ def convert():
         file_path = os.path.join(audio_path, file_name)
         audio_file.save(file_path)
         data, sampleRate = librosa.load(file_path)
-        result = model.transcribe(
+        result = model.transcribe(numpy.array(data), language="en")
+        print(result["text"])
+        return result["text"]
+    else:
+        return jsonify("Invalid audio file.")
+
+
+@app.route("
