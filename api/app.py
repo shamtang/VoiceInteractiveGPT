@@ -26,4 +26,9 @@ else:
             os.remove(file_path)
 
 
-@app.ro
+@app.route("/convert", methods=["POST"])
+def convert():
+    audio_file = request.files.get("audio")
+    if audio_file:
+        file_name = str(uuid.uuid4()) + ".wav"
+        f
