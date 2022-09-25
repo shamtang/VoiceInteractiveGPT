@@ -20,4 +20,10 @@ if not os.path.exists(audio_path):
 else:
     current_time = time.time()
     for file in os.listdir(audio_path):
-        fil
+        file_path = os.path.join(audio_path, file)
+        file_time = os.path.getmtime(file_path)
+        if current_time - file_time > 300:
+            os.remove(file_path)
+
+
+@app.ro
