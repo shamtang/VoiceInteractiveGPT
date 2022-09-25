@@ -31,4 +31,7 @@ def convert():
     audio_file = request.files.get("audio")
     if audio_file:
         file_name = str(uuid.uuid4()) + ".wav"
-        f
+        file_path = os.path.join(audio_path, file_name)
+        audio_file.save(file_path)
+        data, sampleRate = librosa.load(file_path)
+        result = model.transcribe(
