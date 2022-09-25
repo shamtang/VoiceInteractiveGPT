@@ -13,3 +13,11 @@ set_api_key(os.getenv("ELEVEN_KEY"))
 app.secret_key = os.getenv("SECRET_KEY")
 openai.api_key = os.getenv("OPENAI_API_KEY")
 model = whisper.load_model("base")
+
+audio_path = "audio"
+if not os.path.exists(audio_path):
+    os.makedirs(audio_path)
+else:
+    current_time = time.time()
+    for file in os.listdir(audio_path):
+        fil
