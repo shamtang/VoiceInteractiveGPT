@@ -41,4 +41,9 @@ def convert():
         return jsonify("Invalid audio file.")
 
 
-@app.route("
+@app.route("/chat", methods=["POST"])
+def chat():
+    audio_file = request.files.get("audio")
+    if audio_file:
+        file_name = str(uuid.uuid4()) + ".wav"
+        file_path 
