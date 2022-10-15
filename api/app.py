@@ -54,4 +54,11 @@ def chat():
             session["messages"] = []
 
         session["messages"].append({"role": "user", "content": user_text})
-        if len(sessio
+        if len(session["messages"]) > 10:
+            session["messages"].pop(0)
+
+        completion = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", messages=session["messages"]
+        )
+
+      
