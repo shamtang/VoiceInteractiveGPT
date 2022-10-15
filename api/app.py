@@ -49,4 +49,9 @@ def chat():
         file_path = os.path.join(audio_path, file_name)
         audio_file.save(file_path)
         data, sampleRate = librosa.load(file_path)
-        user_text = model.transcribe(numpy.array(data
+        user_text = model.transcribe(numpy.array(data))["text"]
+        if "messages" not in session:
+            session["messages"] = []
+
+        session["messages"].append({"role": "user", "content": user_text})
+        if len(sessio
