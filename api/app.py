@@ -61,4 +61,8 @@ def chat():
             model="gpt-3.5-turbo", messages=session["messages"]
         )
 
-      
+        chatbot_message = completion.choices[0].message.content
+
+        session["messages"].append({"role": "assistant", "content": chatbot_message})
+        if len(session["messages"]) > 10:
+            s
