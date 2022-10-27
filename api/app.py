@@ -65,4 +65,9 @@ def chat():
 
         session["messages"].append({"role": "assistant", "content": chatbot_message})
         if len(session["messages"]) > 10:
-            s
+            session["messages"].pop(0)
+
+        # Convert text to speech
+        audio = generate(text=chatbot_message, voice=voices()[-1])
+        chat_file_name = str(uuid.uuid4()) + ".wav"
+        sav
