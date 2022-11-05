@@ -70,4 +70,7 @@ def chat():
         # Convert text to speech
         audio = generate(text=chatbot_message, voice=voices()[-1])
         chat_file_name = str(uuid.uuid4()) + ".wav"
-        sav
+        save(audio=audio, filename=os.path.join(audio_path, chat_file_name))
+        return jsonify(
+            {"user": user_text, "chat": chatbot_message, "audioSrc": chat_file_name}
+    
