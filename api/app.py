@@ -80,4 +80,12 @@ def chat():
 
 @app.route("/generate", methods=["POST"])
 def generate_speech():
-    data = re
+    data = request.get_json()
+    text = data["text"]
+    audio = generate(text=text, voice=voices()[-1])
+    file_name = "speech.wav"
+    save(audio=audio, filename=os.path.join("audio", file_name))
+    return file_name
+
+
+@app.route("/<file_
