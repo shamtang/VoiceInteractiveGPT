@@ -73,4 +73,11 @@ def chat():
         save(audio=audio, filename=os.path.join(audio_path, chat_file_name))
         return jsonify(
             {"user": user_text, "chat": chatbot_message, "audioSrc": chat_file_name}
-    
+        )
+    else:
+        return jsonify({"chat": ["Invalid audio file."]}), 400
+
+
+@app.route("/generate", methods=["POST"])
+def generate_speech():
+    data = re
