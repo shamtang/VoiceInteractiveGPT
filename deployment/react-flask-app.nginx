@@ -11,4 +11,11 @@ server {
 
     location /static {
         expires 1y;
-        add_header Cache-Cont
+        add_header Cache-Control "public";
+    }
+
+    location /api {
+        include proxy_params;
+        proxy_pass http://localhost:5000;
+    }
+}
