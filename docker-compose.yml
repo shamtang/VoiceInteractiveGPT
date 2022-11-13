@@ -1,3 +1,11 @@
 services:
   api:
-    b
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: react-flask-app-api
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image:
