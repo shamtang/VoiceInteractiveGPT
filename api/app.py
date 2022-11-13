@@ -88,4 +88,6 @@ def generate_speech():
     return file_name
 
 
-@app.route("/<file_
+@app.route("/<file_name>")
+def get_file(file_name):
+    return send_file(os.path.join("audio", file_name), as_attachment=True)
