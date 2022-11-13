@@ -3,4 +3,6 @@ Flask==2.0.1
 gunicorn==20.1.0
 itsdangerous==2.0.1
 Jinja2==3.0.1
-MarkupS
+MarkupSafe==2.0.1
+python-dotenv==0.17.1
+Werkzeug==2.2.3

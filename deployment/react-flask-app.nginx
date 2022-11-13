@@ -1,0 +1,7 @@
+server {
+    listen 80;
+    root /home/ubuntu/react-flask-app/build;
+    server_name _;
+    index index.html;
+
+ 
