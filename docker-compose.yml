@@ -8,4 +8,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.client
-    image:
+    image: react-flask-app-client
+    ports:
+      - "3000:80"
