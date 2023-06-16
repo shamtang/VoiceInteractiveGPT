@@ -139,3 +139,59 @@ body {
 
         & ~ .time .h_m:after {
           @include animation-use(to_24, 86400 * $sec, linear);
+          @include delay(1800 * $sec);
+        }
+
+        & ~ .time .h_m:before {
+          @include animation-use(to_60, 3600 * $sec, linear);
+          @include delay(30 * $sec);
+        }
+
+        & ~ .time .s_ms:before {
+          @include animation-use(to_60, 60 * $sec, linear);
+          @include delay(0.5 * $sec);
+        }
+
+        & ~ .time .s_ms:after {
+          @include animation-use(to_100, $sec, linear);
+        }
+      }
+    }
+
+    .time {
+      position: absolute;
+      width: 100%;
+      top: 110%;
+      opacity: 0;
+
+      & > * {
+        display: inline-block;
+        width: 50%;
+        margin: -2px;
+        color: $grey;
+        font-family: "Fjalla One", sans-serif;
+        font-size: 1.3em;
+      }
+
+      .h_m:after {
+        float: right;
+        @include pseudo("00");
+      }
+
+      .h_m:before {
+        float: right;
+        @include pseudo(":00");
+      }
+
+      .s_ms:before {
+        float: left;
+        @include pseudo(":00");
+      }
+
+      .s_ms:after {
+        float: left;
+        @include pseudo(":00");
+      }
+    }
+  }
+}
