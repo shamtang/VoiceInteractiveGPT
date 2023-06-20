@@ -19,4 +19,8 @@ function ChatApp() {
     // Fetch some data here and update the messages state from session
   }, []);
 
-  co
+  const handleRecord = async (e) => {
+    e.preventDefault();
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      // Get the user's audio stream
+      const strea
