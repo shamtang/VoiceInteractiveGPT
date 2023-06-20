@@ -11,4 +11,12 @@ function ChatApp() {
   const [messages, setMessages] = useState([
     { id: 1, user: false, content: "Hello, I'm ChatGPT" },
     { id: 2, user: true, content: "Hi, I'm the User" },
-    { id: 3, user:
+    { id: 3, user: false, content: 'How are you?' },
+    { id: 4, user: true, content: 'Good, thanks' },
+  ]);
+
+  useEffect(() => {
+    // Fetch some data here and update the messages state from session
+  }, []);
+
+  co
