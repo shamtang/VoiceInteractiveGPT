@@ -48,4 +48,11 @@ function ChatApp() {
       user: user,
       content: content,
     };
-    setMessages((pre
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
+  };
+
+  const handleSubmitAudio = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (audioBlob) {
+     
