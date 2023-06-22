@@ -23,4 +23,8 @@ function ChatApp() {
     e.preventDefault();
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       // Get the user's audio stream
-      const strea
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const recorder = new MediaRecorder(stream);
+      const chunks = [];
+      recorder.addEventListener('dataavailable', (e) => {
+   
