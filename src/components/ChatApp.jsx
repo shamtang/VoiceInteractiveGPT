@@ -33,4 +33,10 @@ function ChatApp() {
         const blob = new Blob(chunks, { type: 'audio/wav' });
         setAudioBlob(blob);
       });
-      rec
+      recorder.start();
+      setTimeout(() => {
+        recorder.stop();
+        stream.getTracks().forEach((track) => track.stop());
+      }, 5000);
+    } else {
+      alert('Your browser does not 
