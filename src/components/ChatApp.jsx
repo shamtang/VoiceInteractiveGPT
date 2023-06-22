@@ -59,4 +59,9 @@ function ChatApp() {
       formData.append('audio', audioBlob, 'audio.wav');
       try {
         const response = await axios.post('/chat', formData);
-        setLo
+        setLoading(false);
+        console.log(response.data.user);
+        console.log(response.data.chat);
+        console.log(response.data.audioSrc);
+        addMessage(true, response.data.user);
+        addMes
