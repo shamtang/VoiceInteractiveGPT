@@ -39,4 +39,13 @@ function ChatApp() {
         stream.getTracks().forEach((track) => track.stop());
       }, 5000);
     } else {
-      alert('Your browser does not 
+      alert('Your browser does not support audio recording.');
+    }
+  };
+  const addMessage = (user, content) => {
+    const newMessage = {
+      id: messages.length + 1,
+      user: user,
+      content: content,
+    };
+    setMessages((pre
