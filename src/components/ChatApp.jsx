@@ -27,4 +27,10 @@ function ChatApp() {
       const recorder = new MediaRecorder(stream);
       const chunks = [];
       recorder.addEventListener('dataavailable', (e) => {
-   
+        chunks.push(e.data);
+      });
+      recorder.addEventListener('stop', () => {
+        const blob = new Blob(chunks, { type: 'audio/wav' });
+        setAudioBlob(blob);
+      });
+      rec
