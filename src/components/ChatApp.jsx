@@ -55,4 +55,8 @@ function ChatApp() {
     e.preventDefault();
     setLoading(true);
     if (audioBlob) {
-     
+      const formData = new FormData();
+      formData.append('audio', audioBlob, 'audio.wav');
+      try {
+        const response = await axios.post('/chat', formData);
+        setLo
