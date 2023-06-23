@@ -78,4 +78,13 @@ function ChatApp() {
     <div className='app container-fluid h-100 p-3'>
       <MessageList messages={messages} />
       <AudioRecorder
-        loading={load
+        loading={loading}
+        onSubmit={handleSubmitAudio}
+        onRecord={handleRecord}
+      />
+      <AudioPlayer src={audioSrc} />
+    </div>
+  );
+}
+
+export default ChatApp;
