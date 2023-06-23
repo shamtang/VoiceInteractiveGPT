@@ -70,4 +70,12 @@ function ChatApp() {
         console.error(error);
       }
     } else {
-      alert(
+      alert('No audio recorded.');
+    }
+  };
+
+  return (
+    <div className='app container-fluid h-100 p-3'>
+      <MessageList messages={messages} />
+      <AudioRecorder
+        loading={load
