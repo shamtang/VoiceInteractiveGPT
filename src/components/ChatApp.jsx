@@ -64,4 +64,10 @@ function ChatApp() {
         console.log(response.data.chat);
         console.log(response.data.audioSrc);
         addMessage(true, response.data.user);
-        addMes
+        addMessage(false, response.data.chat);
+        setAudioSrc(response.data.audioSrc);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      alert(
