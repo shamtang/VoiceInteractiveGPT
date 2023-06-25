@@ -4,4 +4,6 @@ import React from 'react';
 function Message(props) {
   const chat_color = props.message.user ? 'black' : 'purple';
   return (
-    <div className
+    <div className='message list-group-item d-flex align-items-center justify-content-between'>
+      <div style={{ color: chat_color }} className='content text-break'>
+        {props.message.c
