@@ -93,4 +93,10 @@ function registerValidSW(swUrl, config) {
         };
       };
     })
-    .catch(err
+    .catch(error => {
+      console.error('Error during service worker registration:', error);
+    });
+}
+
+function checkValidServiceWorker(swUrl, config) {
+  // Check if the service worker can be found.
