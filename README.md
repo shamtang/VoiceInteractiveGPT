@@ -1,1 +1,1 @@
-# VoiceInteractiveGPT\n\n
+# VoiceInteractiveGPT\n\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n\nVoiceInteractiveGPT is an open-source project enabling users to interact with ChatGPT by using state-of-the-art
