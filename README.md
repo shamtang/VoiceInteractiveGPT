@@ -2,4 +2,7 @@
 git clone https://github.com/shamtang/VoiceInteractiveGPT.git\n```
 2. Navigate to the project directory:\n\n```
 cd VoiceInteractiveGPT\n```
-3. Ins
+3. Install the required dependencies:\n\n```
+pip install -r requirements.txt\n```
+4. Start the development server:\n\n```
+flask run\n```\n\n5. Access the application in your web
